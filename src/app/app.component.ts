@@ -9,6 +9,7 @@ import QRCode from 'qrcode';
 export class AppComponent {
   email: String;
   freeText: String;
+  table: String
   dataUrl: String;
 
 
@@ -18,7 +19,7 @@ export class AppComponent {
 
   async generate() {
     this.dataUrl = await QRCode.toDataURL(
-      JSON.stringify({ email: this.email, freeText: this.freeText }),
+      JSON.stringify({ email: this.email, freeText: this.freeText, table: this.table }),
       {
         width: '500',
       }

@@ -1,4 +1,4 @@
-<div class="text-center" class="web">
+<div class="web text-center">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
@@ -10,8 +10,7 @@
       <h1 class="cover-heading">Der unkomplizierte Weg</h1>
       <p class="lead">
         Erstellen Sie in Sekunden einen QR Code für Ihren Betrieb und
-        ermöglichen Sie so Ihren Kunden eine völlig unkomplizierte Art und Weise
-        der Registrierung.
+        ermöglichen Sie so Ihren Kunden eine völlig unkomplizierte Registrierung.
       </p>
 
       <form>
@@ -23,7 +22,7 @@
             placeholder="E-Mail Adresse"
             [(ngModel)]="email"
           />
-          <small id="emailHelp" class="form-text text-muted"
+          <small class="form-text"
             >An diese E-Mail Adresse senden wir die Einträge. Bitte überprüfen
             Sie die funktionstüchtigektit und denken Sie auch an den
             Spam-Ordner. Die Adresse wird Ihren Kunden in der App ebenfalls
@@ -36,13 +35,26 @@
             type="text"
             name="freeText"
             class="form-control"
-            placeholder="Freitext (Name des Betriebs, Adresse, Tischnummer, ...)"
+            placeholder="Freitext (Name des Betriebs, Adresse, ..."
             [(ngModel)]="freeText"
           ></textarea>
-          <small id="emailHelp" class="form-text text-muted"
+          <small class="form-text"
             >Hinterlegen Sie einen beliebigen Freitext. Dieser Text wird dem
-            Kunden in der App ebenfalls angezeigt. Sie können auch pro Tisch
-            einen QR-Code erstellen.</small
+            Kunden in der App ebenfalls angezeigt.</small
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            name="table"
+            class="form-control"
+            placeholder="Tischnummer"
+            [(ngModel)]="table"
+          />
+          <small class="form-text"
+            >Optionale Tischnummer, damit muss der Kunde diese nicht mehr
+            separat erfassen.</small
           >
         </div>
 

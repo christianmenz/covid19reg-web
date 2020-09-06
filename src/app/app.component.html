@@ -10,7 +10,8 @@
       <h1 class="cover-heading">Der unkomplizierte Weg</h1>
       <p class="lead">
         Erstellen Sie in Sekunden einen QR Code für Ihren Betrieb und
-        ermöglichen Sie so Ihren Kunden eine völlig unkomplizierte Registrierung.
+        ermöglichen Sie so Ihren Kunden eine völlig unkomplizierte
+        Registrierung.
       </p>
 
       <form>
@@ -57,26 +58,29 @@
             separat erfassen.</small
           >
         </div>
-
-        <button
-          [disabled]="!email || !freeText"
-          type="submit"
-          class="btn btn-lg btn-secondary"
-          (click)="generate()"
-        >
-          QR Code erstellen
-        </button>
+        <div class="form-group">
+          <button
+            [disabled]="!email || !freeText"
+            type="submit"
+            class="btn btn-lg btn-secondary btn-block"
+            (click)="generate()"
+          >
+            QR Code erstellen
+          </button>
+        </div>
+        <div class="form-group">
+          <button
+            *ngIf="dataUrl"
+            type="submit"
+            class="btn btn-lg btn-secondary btn-block"
+            (click)="print()"
+          >
+            Jetzt drucken
+          </button>
+        </div>
         <div>
           <img [src]="dataUrl" />
         </div>
-        <button
-          *ngIf="dataUrl"
-          type="submit"
-          class="btn btn-lg btn-secondary"
-          (click)="print()"
-        >
-          Jetzt drucken
-        </button>
       </form>
     </main>
 

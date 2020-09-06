@@ -4,16 +4,24 @@ import QRCode from 'qrcode';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  data: String;
+  email: String;
+  freeText: String;
   dataUrl: String;
 
-  async generate()  {
-    this.dataUrl = await QRCode.toDataURL(this.data);
-    console.log(this.dataUrl);
 
+  print() {
+    window.print();
   }
 
+  async generate() {
+    this.dataUrl = await QRCode.toDataURL(
+      JSON.stringify({ email: this.email, freeText: this.freeText }),
+      {
+        width: '500',
+      }
+    );
+  }
 }
